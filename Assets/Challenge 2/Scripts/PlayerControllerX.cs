@@ -23,7 +23,8 @@ public class PlayerControllerX : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Interval = 0;
-                Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+                GameObject dog = Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+                
             } 
         }
         if (Input.GetKey(KeyCode.D))

@@ -24,7 +24,7 @@ public class DestroyOutOfBoundsX : MonoBehaviour
         else if (transform.position.y < bottomLimit)
         {
             print("game over");
-            light.enabled = false;
+            //light.enabled = false;
             Destroy(gameObject);
         }
 

@@ -5,6 +5,11 @@ using UnityEngine;
 public class MoveForwardX : MonoBehaviour
 {
     public float speed;
+    public int dogSize;
+    void Start()
+    {
+        transform.localScale = new Vector3(dogSize,dogSize,dogSize);   
+    }
 
     void Update()
     {
