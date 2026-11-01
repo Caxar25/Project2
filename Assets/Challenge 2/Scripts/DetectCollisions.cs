@@ -10,10 +10,11 @@ public class DetectCollisions : MonoBehaviour
     {
         if (other.tag == "Dog")
         {
+            GameObject gameManager = GameObject.Find("GameManager");
+            GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+            gameManagerScript.ScaleDog = gameManagerScript.ScaleDog + 4;
             GameObject dog = other.gameObject;
-            MoveForwardX MFX = dog.GetComponent<MoveForwardX>();
-            MFX.dogSize = MFX.dogSize + 30;
-            dog.transform.localScale = dog.transform.localScale + new Vector3(MFX.dogSize,MFX.dogSize,MFX.dogSize);    
+            dog.transform.localScale = new Vector3(gameManagerScript.ScaleDog,gameManagerScript.ScaleDog,gameManagerScript.ScaleDog);    
         }
         Destroy(gameObject);
     }

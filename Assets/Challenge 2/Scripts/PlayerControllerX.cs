@@ -23,7 +23,10 @@ public class PlayerControllerX : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Interval = 0;
+                GameObject gameManager = GameObject.Find("GameManager");
+                GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
                 GameObject dog = Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+                dog.transform.localScale = new Vector3(gameManagerScript.ScaleDog,gameManagerScript.ScaleDog,gameManagerScript.ScaleDog);
                 
             } 
         }
